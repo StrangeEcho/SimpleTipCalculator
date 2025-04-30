@@ -1,0 +1,22 @@
+<resources>
+    <!-- Dashboard -->
+    <string name="app_name"><u>Simple Tip Calculator</u></string>
+    <string name="usr_img_description">Image of User</string>
+    <string name="btn_quickAdd">Quick Add</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_calendar">Calendar</string>
+    <string name="txt_statistics">Yearly Metrics (2025)</string>
+
+    <!-- Quick Add/Add Screen -->
+    <string name="btn_calculate">Calculate Net Tip</string>
+    <string name="txt_tip_title">Add A Tip</string>
+    <string name="hint_date"><u>Click to Select Date</u></string>
+    <string name="hint_gross_tip_nocash">Enter Gross Tip Amount (No Cash)</string>
+    <string name="hint_cash">Enter Cash Amount</string>
+    <string name="hint_notes">Enter Any Notes For The Day</string>
+    <string name="btn_back">Back</string>
+
+    <!-- Date Selection -->
+    <string name="btn_view">View Date</string>
+    <string name="txt_ds_title">Find a Tip</string>
+</resources>
