@@ -9,36 +9,33 @@
     android:padding="16dp"
     tools:context=".TipAddScreen">
 
-    <!-- Title Text -->
     <TextView
-        android:id="@+id/txtTitle"
+        android:id="@+id/TASTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/txt_tip_title"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Divider under Title -->
     <View
-        android:id="@+id/metricsDivider"
+        android:id="@+id/daSHDivider"
         android:layout_width="60dp"
         android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TASTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Date Input -->
     <EditText
-        android:id="@+id/editTextDateSelect"
+        android:id="@+id/TASDateSelector"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/roundedrectangle"
         android:clickable="true"
@@ -46,45 +43,47 @@
         android:hint="@string/hint_date"
         android:padding="12dp"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/metricsDivider" />
+        app:layout_constraintTop_toBottomOf="@id/daSHDivider" />
 
     <!-- Gross Tip Input -->
     <EditText
-        android:id="@+id/editTextGrossTip"
+        android:id="@+id/TASGrossTip"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/roundedrectangle"
         android:hint="@string/hint_gross_tip_nocash"
         android:inputType="numberDecimal"
-        android:maxLines="2"
         android:padding="12dp"
-        android:scrollHorizontally="false"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextDateSelect" />
+        app:layout_constraintTop_toBottomOf="@id/TASDateSelector" />
 
-    <!-- Cash Input -->
     <EditText
-        android:id="@+id/editTextCash"
+        android:id="@+id/TASCash"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/roundedrectangle"
         android:hint="@string/hint_cash"
         android:inputType="numberDecimal"
         android:padding="12dp"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextGrossTip" />
+        app:layout_constraintTop_toBottomOf="@id/TASGrossTip" />
 
-    <!-- Notes Input -->
     <EditText
-        android:id="@+id/editTextNotes"
+        android:id="@+id/TASNotes"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
@@ -93,32 +92,36 @@
         android:hint="@string/hint_notes"
         android:inputType="textMultiLine"
         android:padding="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextCash" />
+        app:layout_constraintTop_toBottomOf="@id/TASCash" />
 
-    <!-- Button -->
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/TASSaveButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginTop="28dp"
-        android:text="@string/btn_calculate"
+        android:text="@string/btn_save"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextNotes" />
+        app:layout_constraintTop_toBottomOf="@id/TASNotes" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:id="@+id/TASBackBtn"
+        android:layout_width="259dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="12dp"
         android:text="@string/btn_back"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@id/TASSaveButton"
         app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

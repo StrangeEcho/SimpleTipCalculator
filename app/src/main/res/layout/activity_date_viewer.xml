@@ -9,11 +9,115 @@
     tools:context=".DateViewer">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/DVViewingDate"
+        android:layout_width="236dp"
+        android:layout_height="46dp"
         android:background="@drawable/roundedrectangle"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="73dp" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/DVCashAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/DVGrossTip"
+        android:layout_width="146dp"
+        android:layout_height="64dp"
+        android:background="@drawable/roundedrectangle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/DVNetTip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DVCashAmount"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/DVFinalAmt"
+        android:layout_width="151dp"
+        android:layout_height="64dp"
+        android:background="@drawable/roundedrectangle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/DVNotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DVNetTip"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/DVNotes"
+        android:layout_width="327dp"
+        android:layout_height="109dp"
+        android:background="@drawable/roundedrectangle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/DVBackBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DVFinalAmt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/DVCashAmount"
+        android:layout_width="143dp"
+        android:layout_height="66dp"
+        android:background="@drawable/roundedrectangle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/DVGrossTip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DVViewingDate"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/DVNetTip"
+        android:layout_width="148dp"
+        android:layout_height="65dp"
+        android:background="@drawable/roundedrectangle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/DVFinalAmt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DVGrossTip"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/DVBackBtn"
+        android:layout_width="101dp"
+        android:layout_height="62dp"
+        android:text="@string/btn_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/DVEditBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DVNotes"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/DVEditBtn"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:text="@string/btn_edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/DVBackBtn"
+        app:layout_constraintTop_toBottomOf="@+id/DVNotes"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

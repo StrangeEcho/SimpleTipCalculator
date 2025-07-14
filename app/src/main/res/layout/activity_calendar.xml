@@ -9,9 +9,8 @@
     android:padding="16dp"
     tools:context=".Calendar">
 
-  <!-- Title -->
   <TextView
-      android:id="@+id/txtCalendarTitle"
+      android:id="@+id/CalTitle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="32dp"
@@ -24,20 +23,18 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <!-- Divider -->
   <View
-      android:id="@+id/titleDivider"
+      android:id="@+id/CalDividerBar"
       android:layout_width="0dp"
       android:layout_height="2dp"
       android:layout_marginTop="8dp"
       android:background="@android:color/darker_gray"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/txtCalendarTitle" />
+      app:layout_constraintTop_toBottomOf="@id/CalTitle" />
 
-  <!-- Date Input -->
   <EditText
-      android:id="@+id/editTextTipDate"
+      android:id="@+id/CalDateSelector"
       android:layout_width="0dp"
       android:layout_height="60dp"
       android:layout_marginHorizontal="24dp"
@@ -49,30 +46,29 @@
       android:padding="12dp"
       android:textAlignment="center"
       android:textColor="@color/white"
+      android:textColorHint="@color/white"
       android:textSize="18sp"
-      app:layout_constraintBottom_toTopOf="@id/btnView"
+      app:layout_constraintBottom_toTopOf="@id/CalViewBtn"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/titleDivider"
+      app:layout_constraintTop_toBottomOf="@id/CalDividerBar"
       app:layout_constraintVertical_chainStyle="packed" />
 
-  <!-- View Button -->
   <Button
-      android:id="@+id/btnView"
+      android:id="@+id/CalViewBtn"
       android:layout_width="0dp"
       android:layout_height="55dp"
       android:layout_marginHorizontal="48dp"
       android:layout_marginTop="16dp"
       android:layout_marginBottom="16dp"
       android:text="@string/btn_view"
-      app:layout_constraintBottom_toTopOf="@id/btnBack"
+      app:layout_constraintBottom_toTopOf="@id/CalBackBtn"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/editTextTipDate" />
+      app:layout_constraintTop_toBottomOf="@id/CalDateSelector" />
 
-  <!-- Back Button -->
   <Button
-      android:id="@+id/btnBack"
+      android:id="@+id/CalBackBtn"
       android:layout_width="0dp"
       android:layout_height="50dp"
       android:layout_marginHorizontal="64dp"
@@ -81,17 +77,17 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/btnView" />
+      app:layout_constraintTop_toBottomOf="@id/CalViewBtn" />
 
   <ImageView
-      android:id="@+id/imageView"
+      android:id="@+id/CalClockImg"
       android:layout_width="93dp"
       android:layout_height="105dp"
-      app:layout_constraintBottom_toTopOf="@+id/editTextTipDate"
+      app:layout_constraintBottom_toTopOf="@+id/CalDateSelector"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/titleDivider"
+      app:layout_constraintTop_toBottomOf="@+id/CalDividerBar"
       app:layout_constraintVertical_bias="0.5"
       app:srcCompat="@drawable/baseline_access_time_24"
       tools:srcCompat="@drawable/baseline_access_time_24" />

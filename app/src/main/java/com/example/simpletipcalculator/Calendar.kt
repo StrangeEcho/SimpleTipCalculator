@@ -11,9 +11,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.simpletipcalculator.utils.DatabaseHelper
 
 class Calendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val db = DatabaseHelper(this)
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_calendar)
@@ -24,11 +27,10 @@ class Calendar : AppCompatActivity() {
             insets
         }
 
-        val editTextDateTip = findViewById<EditText>(R.id.editTextTipDate)
-        val backBtn = findViewById<Button>(R.id.btnBack)
-        val viewBtn = findViewById<Button>(R.id.btnView)
+        val editTextDateTip = findViewById<EditText>(R.id.CalDateSelector)
+        val backBtn = findViewById<Button>(R.id.CalBackBtn)
+        val viewBtn = findViewById<Button>(R.id.CalViewBtn)
 
-        // Back Button → Return to MainActivity
         backBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -49,12 +51,16 @@ class Calendar : AppCompatActivity() {
             datePickerDialog.show()
         }
 
-        // View Button → Send date to DateViewer activity
         viewBtn.setOnClickListener {
             val selectedDate = editTextDateTip.text.toString()
 
             if (selectedDate.isEmpty()) {
                 Toast.makeText(this, "Please select a Date to view", Toast.LENGTH_LONG).show()
+            }
+
+            val fetchDate = db.fetchTipByDate(selectedDate)
+            if (fetchDate == null) {
+                Toast.makeText(this, "No tip with that date was found...", Toast.LENGTH_LONG).show()
             }
             else {
                 val intent = Intent(this, DateViewer::class.java)
@@ -62,5 +68,6 @@ class Calendar : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
     }
 }
