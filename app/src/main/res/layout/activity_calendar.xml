@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashbackground"
+    android:padding="16dp"
+    tools:context=".Calendar">
+
+  <TextView
+      android:id="@+id/CalTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="@string/txt_ds_title"
+      android:textAlignment="center"
+      android:textColor="@color/white"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <View
+      android:id="@+id/CalDividerBar"
+      android:layout_width="0dp"
+      android:layout_height="2dp"
+      android:layout_marginTop="8dp"
+      android:background="@android:color/darker_gray"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/CalTitle" />
+
+  <EditText
+      android:id="@+id/CalDateSelector"
+      android:layout_width="0dp"
+      android:layout_height="60dp"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginBottom="16dp"
+      android:background="@drawable/roundedrectangle"
+      android:hint="@string/hint_date"
+      android:inputType="date"
+      android:padding="12dp"
+      android:textAlignment="center"
+      android:textColor="@color/white"
+      android:textColorHint="@color/white"
+      android:textSize="18sp"
+      app:layout_constraintBottom_toTopOf="@id/CalViewBtn"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/CalDividerBar"
+      app:layout_constraintVertical_chainStyle="packed" />
+
+  <Button
+      android:id="@+id/CalViewBtn"
+      android:layout_width="0dp"
+      android:layout_height="55dp"
+      android:layout_marginHorizontal="48dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="16dp"
+      android:text="@string/btn_view"
+      app:layout_constraintBottom_toTopOf="@id/CalBackBtn"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/CalDateSelector" />
+
+  <Button
+      android:id="@+id/CalBackBtn"
+      android:layout_width="0dp"
+      android:layout_height="50dp"
+      android:layout_marginHorizontal="64dp"
+      android:layout_marginBottom="32dp"
+      android:text="@string/btn_back"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/CalViewBtn" />
+
+  <ImageView
+      android:id="@+id/CalClockImg"
+      android:layout_width="93dp"
+      android:layout_height="105dp"
+      app:layout_constraintBottom_toTopOf="@+id/CalDateSelector"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/CalDividerBar"
+      app:layout_constraintVertical_bias="0.5"
+      app:srcCompat="@drawable/baseline_access_time_24"
+      tools:srcCompat="@drawable/baseline_access_time_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>
